@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.enoque_alves.comunicacaoblue.joystickk"
+    android:screenOrientation="landscape">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Guarra"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="36dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_estica"
+            android:layout_width="177dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/seekbar_levanta"
+            android:max="120"
+            android:progress="100"
+            android:rotation="270"
+            tools:layout_editor_absoluteX="371dp"
+            tools:layout_editor_absoluteY="155dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_levanta"
+            android:layout_width="177dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:max="70"
+            android:progress="30"
+            android:rotation="270"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="155dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/programar"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Programar" />
+
+        <Button
+            android:id="@+id/butao_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="51dp"
+            android:layout_marginStart="51dp"
+            android:layout_marginTop="22dp"
+            android:text="Play"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="165dp"
+            android:layout_below="@+id/seekbar_garra"
+            android:layout_alignLeft="@+id/seekbar_garra"
+            android:layout_alignStart="@+id/seekbar_garra" />
+
+        <Button
+            android:id="@+id/butao_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            tools:layout_editor_absoluteX="317dp"
+            tools:layout_editor_absoluteY="85dp"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/seekbar_base"
+            android:layout_alignLeft="@+id/butao_play"
+            android:layout_alignStart="@+id/butao_play" />
+
+        <Button
+            android:id="@+id/butao_gravar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gravar"
+            tools:layout_editor_absoluteX="188dp"
+            tools:layout_editor_absoluteY="85dp"
+            android:layout_alignBaseline="@+id/butao_play"
+            android:layout_alignBottom="@+id/butao_play"
+            android:layout_alignLeft="@+id/butao_limpa"
+            android:layout_alignStart="@+id/butao_limpa" />
+
+        <Button
+            android:id="@+id/butao_limpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/butao_reset"
+            android:layout_alignBottom="@+id/butao_reset"
+            android:layout_marginLeft="45dp"
+            android:layout_marginStart="45dp"
+            android:layout_toEndOf="@+id/butao_reset"
+            android:layout_toRightOf="@+id/butao_reset"
+            android:text="Limpar"
+            tools:layout_editor_absoluteX="317dp"
+            tools:layout_editor_absoluteY="165dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_base"
+            android:layout_width="300dp"
+            android:layout_height="19dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:max="180"
+            android:progress="87"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_garra"
+            android:layout_width="300dp"
+            android:layout_height="21dp"
+            android:layout_alignLeft="@+id/seekbar_base"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/seekbar_base"
+            android:layout_marginTop="27dp"
+            android:max="57"
+            android:progress="57"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="25dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:text="Base"
+        tools:layout_editor_absoluteX="281dp"
+        tools:layout_editor_absoluteY="240dp" />
+
+    <Button
+        android:id="@+id/button_more_c"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="43dp"
+        android:drawableBottom="@mipmap/button_more"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/button_less_c"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_c"
+        android:layout_alignStart="@+id/button_more_c"
+        android:drawableBottom="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/button_more_d"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:drawableBottom="@mipmap/button_more"
+        android:layout_alignBottom="@+id/button_more_c"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/button_less_d"
+        android:layout_width="35dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_d"
+        android:layout_alignStart="@+id/button_more_d"
+        android:drawableBottom="@mipmap/ic_launcher" />
+
+</RelativeLayout>

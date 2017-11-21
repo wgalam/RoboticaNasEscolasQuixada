@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.enoque_alves.comunicacaoblue.novo_comando">
+
+    <EditText
+        android:id="@+id/nome_comando"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/valor_comando"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="comando"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/enviar_novo_comando"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar" />
+</LinearLayout>
