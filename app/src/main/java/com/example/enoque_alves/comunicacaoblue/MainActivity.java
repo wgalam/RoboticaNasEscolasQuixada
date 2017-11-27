@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         textos = new ArrayList<String>();
         for (BluetoothDevice device : pairedDevices) {
-            // Add the name and address to an array adapter to show in a ListView
             textos.add(device.getName() + "\n" + device.getAddress());
         }
 
