@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,140 +8,311 @@
     tools:context="com.example.enoque_alves.comunicacaoblue.joystickk"
     android:screenOrientation="landscape">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Guarra"
-            android:textAlignment="center"
-            tools:layout_editor_absoluteX="276dp"
-            tools:layout_editor_absoluteY="36dp" />
-
-        <SeekBar
-            android:id="@+id/seekbar_estica"
-            android:layout_width="177dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/seekbar_levanta"
-            android:max="120"
-            android:progress="100"
-            android:rotation="270"
-            tools:layout_editor_absoluteX="371dp"
-            tools:layout_editor_absoluteY="155dp" />
-
-        <SeekBar
-            android:id="@+id/seekbar_levanta"
-            android:layout_width="177dp"
-            android:layout_height="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:max="70"
-            android:progress="30"
-            android:rotation="270"
-            tools:layout_editor_absoluteX="36dp"
-            tools:layout_editor_absoluteY="155dp" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout"
-        android:layout_alignParentTop="true"
+    <ImageButton
+        android:id="@+id/button_more_base"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/button_more"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintVertical_bias="0.996" />
 
-        <Button
-            android:id="@+id/programar"
-            android:layout_width="120dp"
-            android:layout_height="35dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Programar" />
+    <ImageButton
+        android:id="@+id/button_more_garra"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/button_more"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/butao_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="51dp"
-            android:layout_marginStart="51dp"
-            android:layout_marginTop="22dp"
-            android:text="Play"
-            tools:layout_editor_absoluteX="188dp"
-            tools:layout_editor_absoluteY="165dp"
-            android:layout_below="@+id/seekbar_garra"
-            android:layout_alignLeft="@+id/seekbar_garra"
-            android:layout_alignStart="@+id/seekbar_garra" />
+    <ImageButton
+        android:id="@+id/button_less_garra"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_d"
+        android:layout_alignStart="@+id/button_more_d"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/butao_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            tools:layout_editor_absoluteX="317dp"
-            tools:layout_editor_absoluteY="85dp"
-            android:layout_marginBottom="50dp"
-            android:layout_above="@+id/seekbar_base"
-            android:layout_alignLeft="@+id/butao_play"
-            android:layout_alignStart="@+id/butao_play" />
+    <ImageButton
+        android:id="@+id/button_more_c"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/button_more"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="242dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <Button
-            android:id="@+id/butao_gravar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gravar"
-            tools:layout_editor_absoluteX="188dp"
-            tools:layout_editor_absoluteY="85dp"
-            android:layout_alignBaseline="@+id/butao_play"
-            android:layout_alignBottom="@+id/butao_play"
-            android:layout_alignLeft="@+id/butao_limpa"
-            android:layout_alignStart="@+id/butao_limpa" />
+    <ImageButton
+        android:id="@+id/button_less_c"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_c"
+        android:layout_alignStart="@+id/button_more_c"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.852"
+        app:layout_constraintTop_toBottomOf="@+id/button_more_c" />
 
-        <Button
-            android:id="@+id/butao_limpa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/butao_reset"
-            android:layout_alignBottom="@+id/butao_reset"
-            android:layout_marginLeft="45dp"
-            android:layout_marginStart="45dp"
-            android:layout_toEndOf="@+id/butao_reset"
-            android:layout_toRightOf="@+id/butao_reset"
-            android:text="Limpar"
-            tools:layout_editor_absoluteX="317dp"
-            tools:layout_editor_absoluteY="165dp" />
+    <ImageButton
+        android:id="@+id/button_more_d"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@+id/button_more_c"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/button_more"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.04" />
 
-        <SeekBar
-            android:id="@+id/seekbar_base"
-            android:layout_width="300dp"
-            android:layout_height="19dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:max="180"
-            android:progress="87"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="316dp" />
+    <ImageButton
+        android:id="@+id/button_less_d"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_d"
+        android:layout_alignStart="@+id/button_more_d"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="69dp"
+        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.858" />
 
-        <SeekBar
-            android:id="@+id/seekbar_garra"
-            android:layout_width="300dp"
-            android:layout_height="21dp"
-            android:layout_alignLeft="@+id/seekbar_base"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/seekbar_base"
-            android:layout_marginTop="27dp"
-            android:max="57"
-            android:progress="57"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="25dp" />
+    <ImageButton
+        android:id="@+id/button_less_base"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/button_more_d"
+        android:layout_alignStart="@+id/button_more_d"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintVertical_bias="1.0" />
 
-    </RelativeLayout>
+    <Button
+        android:id="@+id/programar"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Programar"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="103dp"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.296" />
+
+    <Button
+        android:id="@+id/butao_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/seekbar_garra"
+        android:layout_alignStart="@+id/seekbar_garra"
+        android:layout_below="@+id/seekbar_garra"
+        android:layout_marginStart="51dp"
+        android:text="Play"
+        android:layout_marginLeft="51dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="9dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/butao_gravar"
+        app:layout_constraintRight_toLeftOf="@+id/butao_limpa"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintVertical_bias="0.529" />
+
+    <Button
+        android:id="@+id/butao_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekbar_base"
+        android:layout_alignLeft="@+id/butao_play"
+        android:layout_alignStart="@+id/butao_play"
+        android:text="Reset"
+        android:layout_marginTop="81dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/butao_gravar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/butao_play"
+        android:layout_alignBottom="@+id/butao_play"
+        android:layout_alignLeft="@+id/butao_limpa"
+        android:layout_alignStart="@+id/butao_limpa"
+        android:text="Gravar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="81dp"
+        app:layout_constraintRight_toLeftOf="@+id/butao_reset"
+        android:layout_marginRight="78dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/butao_limpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/butao_reset"
+        android:layout_alignBottom="@+id/butao_reset"
+        android:layout_marginStart="45dp"
+        android:layout_toEndOf="@+id/butao_reset"
+        android:layout_toRightOf="@+id/butao_reset"
+        android:text="Limpar"
+        android:layout_marginTop="72dp"
+        app:layout_constraintTop_toBottomOf="@+id/butao_reset"
+        android:layout_marginRight="169dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.724" />
+
+    <SeekBar
+        android:id="@+id/seekbar_garra"
+        android:layout_width="300dp"
+        android:layout_height="21dp"
+        android:layout_alignLeft="@+id/seekbar_base"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/seekbar_base"
+        android:max="57"
+        android:progress="57"
+        tools:layout_editor_absoluteX="146dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekbar_estica"
+        android:layout_width="177dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_toLeftOf="@+id/butao_play"
+        android:layout_toStartOf="@+id/butao_play"
+        android:max="120"
+        android:progress="100"
+        android:rotation="270"
+        tools:layout_editor_absoluteX="457dp"
+        tools:layout_editor_absoluteY="145dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Guarra"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="@+id/seekbar_garra"
+        android:layout_marginTop="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <SeekBar
+        android:id="@+id/seekbar_levanta"
+        android:layout_width="177dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:max="70"
+        android:progress="30"
+        android:rotation="270"
+        tools:layout_editor_absoluteX="-37dp"
+        tools:layout_editor_absoluteY="145dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -149,51 +320,94 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
         android:text="Base"
-        tools:layout_editor_absoluteX="281dp"
-        tools:layout_editor_absoluteY="240dp" />
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="247dp" />
 
-    <Button
-        android:id="@+id/button_more_c"
-        android:layout_width="35dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="43dp"
-        android:drawableBottom="@mipmap/button_more"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <SeekBar
+        android:id="@+id/seekbar_base"
+        android:layout_width="300dp"
+        android:layout_height="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:max="180"
+        android:progress="87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button_less_c"
-        android:layout_width="35dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/button_more_c"
-        android:layout_alignStart="@+id/button_more_c"
-        android:drawableBottom="@mipmap/ic_launcher" />
+    <TextView
+        android:id="@+id/label_c"
+        android:layout_width="48dp"
+        android:layout_height="19dp"
+        android:rotation="270"
+        android:text="C"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="81dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.187" />
 
-    <Button
-        android:id="@+id/button_more_d"
-        android:layout_width="35dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
-        android:drawableBottom="@mipmap/button_more"
-        android:layout_alignBottom="@+id/button_more_c"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp" />
+    <TextView
+        android:id="@+id/label_d"
+        android:layout_width="48dp"
+        android:layout_height="19dp"
+        android:rotation="90"
+        android:text="D"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.579" />
 
-    <Button
-        android:id="@+id/button_less_d"
-        android:layout_width="35dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/button_more_d"
-        android:layout_alignStart="@+id/button_more_d"
-        android:drawableBottom="@mipmap/ic_launcher" />
+    <TextView
+        android:id="@+id/label_garra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/label_base"
+        android:layout_width="19dp"
+        android:layout_height="15dp"
+        android:text="B"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/seekbar_base"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>

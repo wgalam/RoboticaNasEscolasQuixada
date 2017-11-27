@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -26,9 +28,11 @@ public class joystickk extends AppCompatActivity {
     private ArrayList<String> comandosGravados = new ArrayList<String>();
     private ArrayList<String> comandos = new ArrayList<String>();
     private ArrayList<String> comandosTela = new ArrayList<String>();
-    private Button gravar, limpar, play, reset, programar, more_c, more_d, less_c, less_d;
+    private Button gravar, limpar, play, reset, programar;
+    private ImageButton more_base, more_garra, less_base, less_garra, more_c, more_d, less_c, less_d;
     private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
     private EnviaDados enviaDados = EnviaDados.getEnviaDados();
+    private TextView label_garra, label_base, label_c, label_d;
     private int delay = 1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +48,28 @@ public class joystickk extends AppCompatActivity {
         limpar = (Button) findViewById(R.id.butao_limpa);
         gravar = (Button) findViewById(R.id.butao_gravar);
         programar = (Button) findViewById(R.id.programar);
-        more_c = (Button) findViewById(R.id.button_more_c);
-        more_d = (Button) findViewById(R.id.button_more_d);
-        less_c = (Button) findViewById(R.id.button_less_c);
-        less_d = (Button) findViewById(R.id.button_less_d);
+        more_c = (ImageButton) findViewById(R.id.button_more_c);
+        more_d = (ImageButton) findViewById(R.id.button_more_d);
+        less_c = (ImageButton) findViewById(R.id.button_less_c);
+        less_d = (ImageButton) findViewById(R.id.button_less_d);
+        more_base = (ImageButton) findViewById(R.id.button_more_garra);
+        more_garra = (ImageButton) findViewById(R.id.button_more_garra);
+        less_garra = (ImageButton) findViewById(R.id.button_less_base);
+        less_base = (ImageButton) findViewById(R.id.button_less_base);
+        label_base = (TextView) findViewById(R.id.label_base);
+        label_garra = (TextView) findViewById(R.id.label_garra);
+        label_c = (TextView) findViewById(R.id.label_c);
+        label_d = (TextView) findViewById(R.id.label_d);
+
+        label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
+        label_base.setText("" + (int) (base_bar.getProgress()/1.8));
+        label_c.setText("" + (int) (c_bar.getProgress()/1.2));
+        label_d.setText("" + (int) (d_bar.getProgress()/0.7));
+
+
+
         mmSocket = connection.getConection();
 
-
-        /*NAO ESQUECER DE TIRAR*/
-        //comandos.add("!a30");
-        //comandos.add("!a60");
 
         garra_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
@@ -69,6 +85,7 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
                 String comando = "!a" + (seekBar.getProgress()+10);
                 enviarComando(comando);
 
@@ -88,6 +105,7 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                label_base.setText("" + (int) (base_bar.getProgress()/1.8));
                 String comando = "!b" + (seekBar.getProgress()+10);
                 enviarComando(comando);
 
@@ -107,6 +125,7 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                label_c.setText("" + (int) (c_bar.getProgress()/1.2));
                 String comando = "!c" + (seekBar.getProgress()+60);
                 enviarComando(comando);
 
@@ -126,6 +145,7 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
+                label_d.setText("" + (int) (d_bar.getProgress()/0.7));
                 String comando = "!d" + (seekBar.getProgress()+60);
                 enviarComando(comando);
 
@@ -234,11 +254,50 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                d_bar.setProgress(d_bar.getProgress()+1);
+                d_bar.setProgress(d_bar.getProgress()-1);
                 String comando = "!d" + (d_bar.getProgress()+60);
                 enviarComando(comando);
             }
         });
+        less_base.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                base_bar.setProgress(base_bar.getProgress()-1);
+                String comando = "!b" + (base_bar.getProgress()+10);
+                enviarComando(comando);
+            }
+        });
+        less_garra.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                garra_bar.setProgress(garra_bar.getProgress()-1);
+                String comando = "!a" + (garra_bar.getProgress()+10);
+                enviarComando(comando);
+            }
+        });
+
+        more_base.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                base_bar.setProgress(base_bar.getProgress()+1);
+                String comando = "!b" + (base_bar.getProgress()+10);
+                enviarComando(comando);
+            }
+        });
+        more_garra.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                garra_bar.setProgress(garra_bar.getProgress()+1);
+                String comando = "!a" + (garra_bar.getProgress()+10);
+                enviarComando(comando);
+            }
+        });
+
+
         try{
             mmOutputStream = mmSocket.getOutputStream();
         }

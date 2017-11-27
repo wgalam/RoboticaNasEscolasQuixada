@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         listaDeDispositivos = (ListView) findViewById(R.id.id_lista);
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, textos);
-        //listaDeDispositivos.setAdapter(adapter);
+        listaDeDispositivos.setAdapter(adapter);
 
 
         //listaDeCursos.setClickable(true);
