@@ -29,7 +29,9 @@
             android:name=".joystick"
             android:label="@string/title_activity_joystick"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".joystickk" />
+        <activity
+            android:name=".joystickk"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".TelaDeProgramacao"
             android:label="@string/title_activity_tela_de_programacao"
