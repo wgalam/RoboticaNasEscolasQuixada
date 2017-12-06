@@ -11,44 +11,44 @@
     tools:layout_editor_absoluteX="0dp">
 
     <ImageButton
-        android:id="@+id/button_more_base"
+        android:id="@+id/button_less_base"
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@mipmap/button_more"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintLeft_toRightOf="@+id/button_less_c"
         android:layout_marginLeft="38dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/button_more_garra"
+        app:layout_constraintRight_toRightOf="@+id/button_less_garra"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toBottomOf="@+id/button_less_c"
         android:layout_marginBottom="0dp" />
 
     <ImageButton
-        android:id="@+id/button_more_garra"
+        android:id="@+id/button_less_garra"
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@mipmap/button_more"
+        android:src="@mipmap/ic_launcher"
         app:layout_constraintLeft_toRightOf="@+id/button_more_c"
         android:layout_marginLeft="38dp"
-        app:layout_constraintTop_toTopOf="@+id/button_less_garra"
+        app:layout_constraintTop_toTopOf="@+id/button_more_garra"
         android:layout_marginTop="0dp" />
 
     <ImageButton
-        android:id="@+id/button_less_garra"
+        android:id="@+id/button_more_garra"
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/button_more_d"
         android:layout_alignStart="@+id/button_more_d"
-        android:layout_marginRight="46dp"
+        android:layout_marginRight="22dp"
         android:layout_marginTop="0dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/button_more"
         app:layout_constraintRight_toLeftOf="@+id/button_more_d"
         app:layout_constraintTop_toTopOf="@+id/button_more_d" />
 
@@ -60,9 +60,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:src="@mipmap/button_more"
-        app:layout_constraintTop_toTopOf="@+id/button_more_garra"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="0dp"
+        app:layout_constraintTop_toTopOf="@+id/button_less_garra"
+        android:layout_marginTop="-37dp"
+        android:layout_marginLeft="3dp"
         app:layout_constraintLeft_toLeftOf="@+id/button_less_c" />
 
     <ImageButton
@@ -74,10 +74,10 @@
         android:layout_alignLeft="@+id/button_more_c"
         android:layout_alignStart="@+id/button_more_c"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_levanta"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_c"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
-        app:layout_constraintVertical_bias="0.906"
+        app:layout_constraintVertical_bias="1.0"
         android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="@+id/button_more_c"
         android:layout_marginLeft="32dp"
@@ -106,20 +106,20 @@
         android:src="@mipmap/ic_launcher"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="@+id/button_more_d"
-        app:layout_constraintBottom_toBottomOf="@+id/button_less_base"
+        app:layout_constraintBottom_toBottomOf="@+id/button_more_base"
         android:layout_marginBottom="0dp" />
 
     <ImageButton
-        android:id="@+id/button_less_base"
+        android:id="@+id/button_more_base"
         android:layout_width="41dp"
         android:layout_height="43dp"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/button_more_d"
         android:layout_alignStart="@+id/button_more_d"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginLeft="5dp"
-        app:layout_constraintLeft_toLeftOf="@+id/button_less_garra"
-        app:layout_constraintBottom_toBottomOf="@+id/button_more_base"
+        android:src="@mipmap/button_more"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/button_more_garra"
+        app:layout_constraintBottom_toBottomOf="@+id/button_less_base"
         android:layout_marginBottom="-1dp" />
 
     <Button
@@ -129,12 +129,13 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="7dp"
         android:text="Programar"
         app:layout_constraintLeft_toLeftOf="@+id/butao_gravar"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_levanta"
+        app:layout_constraintTop_toBottomOf="@+id/seekbar_c"
         android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="@+id/butao_gravar" />
+        app:layout_constraintRight_toRightOf="@+id/butao_gravar"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <Button
         android:id="@+id/butao_play"
@@ -145,13 +146,16 @@
         android:layout_below="@+id/seekbar_garra"
         android:layout_marginLeft="0dp"
         android:layout_marginStart="51dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
         android:text="Play"
         app:layout_constraintLeft_toRightOf="@+id/butao_gravar"
-        app:layout_constraintTop_toTopOf="@+id/butao_gravar"
+        app:layout_constraintTop_toTopOf="@+id/textView"
         app:layout_constraintRight_toLeftOf="@+id/butao_reset"
         android:layout_marginRight="0dp"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/butao_limpa"
+        app:layout_constraintVertical_bias="0.483" />
 
     <Button
         android:id="@+id/butao_reset"
@@ -160,11 +164,11 @@
         android:layout_above="@+id/seekbar_base"
         android:layout_alignLeft="@+id/butao_play"
         android:layout_alignStart="@+id/butao_play"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="-74dp"
         android:text="Reiniciar"
-        app:layout_constraintRight_toLeftOf="@+id/button_less_garra"
+        app:layout_constraintRight_toLeftOf="@+id/button_more_garra"
         app:layout_constraintTop_toTopOf="@+id/butao_play"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="-15dp" />
 
     <Button
         android:id="@+id/butao_gravar"
@@ -175,13 +179,16 @@
         android:layout_alignLeft="@+id/butao_limpa"
         android:layout_alignStart="@+id/butao_limpa"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="8dp"
         android:text="Gravar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/button_more_garra"
-        app:layout_constraintTop_toBottomOf="@+id/seekbar_garra"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintLeft_toRightOf="@+id/button_less_garra"
+        app:layout_constraintVertical_bias="0.15"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintRight_toLeftOf="@+id/butao_reset"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.181" />
 
     <Button
         android:id="@+id/butao_limpa"
@@ -190,17 +197,18 @@
         android:layout_alignBaseline="@+id/butao_reset"
         android:layout_alignBottom="@+id/butao_reset"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/butao_reset"
         android:layout_toRightOf="@+id/butao_reset"
         android:text="Limpar Programa"
         app:layout_constraintBottom_toBottomOf="@+id/programar"
-        app:layout_constraintLeft_toLeftOf="@+id/butao_play"
+        app:layout_constraintLeft_toLeftOf="@+id/butao_gravar"
         app:layout_constraintTop_toTopOf="@+id/programar"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginRight="0dp"
-        app:layout_constraintRight_toRightOf="@+id/butao_play" />
+        app:layout_constraintVertical_bias="1.0"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/butao_reset"
+        app:layout_constraintHorizontal_bias="0.947" />
 
     <SeekBar
         android:id="@+id/seekbar_garra"
@@ -215,29 +223,29 @@
         android:max="57"
         android:progress="57"
         app:layout_constraintHorizontal_bias="0.514"
-        app:layout_constraintLeft_toRightOf="@+id/button_more_garra"
-        app:layout_constraintRight_toLeftOf="@+id/button_less_garra"
-        app:layout_constraintTop_toTopOf="@+id/button_less_garra"
-        app:layout_constraintBottom_toBottomOf="@+id/button_less_garra"
+        app:layout_constraintLeft_toRightOf="@+id/button_less_garra"
+        app:layout_constraintRight_toLeftOf="@+id/button_more_garra"
+        app:layout_constraintTop_toTopOf="@+id/button_more_garra"
+        app:layout_constraintBottom_toBottomOf="@+id/button_more_garra"
         android:layout_marginBottom="8dp" />
 
     <SeekBar
-        android:id="@+id/seekbar_estica"
+        android:id="@+id/seekbar_d"
         android:layout_width="177dp"
         android:layout_height="20dp"
         android:layout_centerVertical="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_toLeftOf="@+id/butao_play"
         android:layout_toStartOf="@+id/butao_play"
         android:max="120"
         android:progress="100"
         android:rotation="270"
-        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/button_less_d"
-        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/button_more_garra"
         app:layout_constraintTop_toBottomOf="@+id/button_more_d"
-        app:layout_constraintVertical_bias="0.467"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="@+id/button_less_garra" />
+        app:layout_constraintVertical_bias="0.467" />
 
     <TextView
         android:id="@+id/textView"
@@ -254,7 +262,7 @@
         app:layout_constraintTop_toBottomOf="@+id/seekbar_garra" />
 
     <SeekBar
-        android:id="@+id/seekbar_levanta"
+        android:id="@+id/seekbar_c"
         android:layout_width="177dp"
         android:layout_height="20dp"
         android:layout_alignParentEnd="true"
@@ -263,10 +271,10 @@
         android:max="70"
         android:progress="30"
         android:rotation="270"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintTop_toBottomOf="@+id/button_more_c"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="@+id/button_more_garra" />
+        android:layout_marginRight="11dp"
+        app:layout_constraintRight_toRightOf="@+id/button_less_garra" />
 
     <TextView
         android:id="@+id/textView2"
@@ -291,9 +299,9 @@
         android:layout_centerHorizontal="true"
         android:max="180"
         android:progress="87"
-        app:layout_constraintLeft_toRightOf="@+id/button_more_base"
+        app:layout_constraintLeft_toRightOf="@+id/button_less_base"
         android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/button_less_base"
+        app:layout_constraintRight_toLeftOf="@+id/button_more_base"
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/button_less_c"
         android:layout_marginBottom="0dp" />
@@ -328,29 +336,21 @@
         android:layout_height="19dp"
         android:rotation="90"
         android:text="D"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="@+id/button_more_d"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/button_more_d" />
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="48dp"
         android:layout_height="19dp"
-        android:layout_marginRight="8dp"
         android:rotation="90"
         android:text="Altura"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="86dp"
         app:layout_constraintBottom_toTopOf="@+id/button_less_d"
-        android:layout_marginLeft="16dp"
-        app:layout_constraintLeft_toLeftOf="@+id/button_more_d"
-        app:layout_constraintHorizontal_bias="1.0" />
+        android:layout_marginLeft="27dp"
+        app:layout_constraintLeft_toLeftOf="@+id/button_more_d" />
 
     <TextView
         android:id="@+id/label_garra"
@@ -370,11 +370,12 @@
         android:layout_width="19dp"
         android:layout_height="15dp"
         android:text="B"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="9dp"
         app:layout_constraintBottom_toTopOf="@+id/seekbar_base"
-        app:layout_constraintLeft_toRightOf="@+id/button_more_base"
+        app:layout_constraintLeft_toRightOf="@+id/button_less_base"
         android:layout_marginLeft="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/button_less_base"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintRight_toLeftOf="@+id/button_more_base"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.492" />
 
 </android.support.constraint.ConstraintLayout>

@@ -15,9 +15,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class joystickk extends AppCompatActivity {
@@ -41,8 +39,8 @@ public class joystickk extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         garra_bar = (SeekBar) findViewById(R.id.seekbar_garra);
         base_bar = (SeekBar) findViewById(R.id.seekbar_base);
-        c_bar = (SeekBar) findViewById(R.id.seekbar_estica);
-        d_bar = (SeekBar) findViewById(R.id.seekbar_levanta);
+        c_bar = (SeekBar) findViewById(R.id.seekbar_c);
+        d_bar = (SeekBar) findViewById(R.id.seekbar_d);
         play = (Button) findViewById(R.id.butao_play);
         reset = (Button) findViewById(R.id.butao_reset);
         limpar = (Button) findViewById(R.id.butao_limpa);
@@ -63,13 +61,11 @@ public class joystickk extends AppCompatActivity {
 
         label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
         label_base.setText("" + (int) (base_bar.getProgress()/1.8));
-        label_c.setText("" + (int) (c_bar.getProgress()/1.2));
-        label_d.setText("" + (int) (d_bar.getProgress()/0.7));
+        label_c.setText("" + (int) (c_bar.getProgress()/0.7));
+        label_d.setText("" + (int) (d_bar.getProgress()/1.2));
 
-
-
+        //play.setVisibility(View.INVISIBLE);
         mmSocket = connection.getConection();
-
 
         garra_bar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
@@ -338,22 +334,51 @@ public class joystickk extends AppCompatActivity {
                 if (servo == 'a'){
                     comandoTela = "Abre/fecha  ";
                     posicaoAtual = (int) ((posicaoAtual-10)/0.57);
+                    Log.i("asd", "valor posicao: " + posicaoAtual);
+                    label_garra.setText(""+ posicaoAtual);
                 }
                 else if (servo == 'b'){
                     comandoTela = "Girar  ";
                     posicaoAtual = (int) ((posicaoAtual-10)/1.8);
+                    label_base.setText(""+ posicaoAtual);
                 }
                 else if (servo == 'c'){
                     comandoTela = "Avanca/recua  ";
-                    posicaoAtual = (int) ((posicaoAtual-60)/1.2);
+                    posicaoAtual = (int) ((posicaoAtual-60)/0.7);
+                    label_c.setText(""+posicaoAtual);
                 }
                 else if (servo == 'd'){
                     comandoTela = "Sobe/desce  ";
-                    posicaoAtual = (int) ((posicaoAtual-60)/0.7);
+                    posicaoAtual = (int) ((posicaoAtual-60)/1.2);
+                    label_d.setText(""+ posicaoAtual);
                 }
                 comandoTela += ""+posicaoAtual;
                 comandosTela.add(comandoTela);
             }
+
+        char chars [] = comando.toCharArray();
+        char servo = chars[1];
+        String aux = "";
+        for (int j = 2 ; j < chars.length; j++) {
+            aux = aux + chars[j];
+        }
+        int posicaoAtual = Integer.parseInt(aux);
+        if (servo == 'a'){
+            posicaoAtual = (int) ((posicaoAtual-10)/0.57);
+            label_garra.setText(""+ posicaoAtual);
+        }
+        else if (servo == 'b'){
+            posicaoAtual = (int) ((posicaoAtual-10)/1.8);
+            label_base.setText(""+ posicaoAtual);
+        }
+        else if (servo == 'c'){
+            posicaoAtual = (int) ((posicaoAtual-60)/0.7);
+            label_c.setText(""+posicaoAtual);
+        }
+        else if (servo == 'd'){
+            posicaoAtual = (int) ((posicaoAtual-60)/1.2);
+            label_d.setText(""+ posicaoAtual);
+        }
             enviaDados.enviarComando(comando);
 //            garra_bar.setProgress(enviaDados.getPosicaoA());
 //            base_bar.setProgress(enviaDados.getPosicaoB());
