@@ -52,9 +52,9 @@ public class joystickk extends AppCompatActivity {
         more_d = (ImageButton) findViewById(R.id.button_more_d);
         less_c = (ImageButton) findViewById(R.id.button_less_c);
         less_d = (ImageButton) findViewById(R.id.button_less_d);
-        more_base = (ImageButton) findViewById(R.id.button_more_garra);
+        more_base = (ImageButton) findViewById(R.id.button_more_base);
         more_garra = (ImageButton) findViewById(R.id.button_more_garra);
-        less_garra = (ImageButton) findViewById(R.id.button_less_base);
+        less_garra = (ImageButton) findViewById(R.id.button_less_garra);
         less_base = (ImageButton) findViewById(R.id.button_less_base);
         label_base = (TextView) findViewById(R.id.label_base);
         label_garra = (TextView) findViewById(R.id.label_garra);

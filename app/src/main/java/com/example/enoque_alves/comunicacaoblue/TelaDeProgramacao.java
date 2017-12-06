@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class TelaDeProgramacao extends AppCompatActivity {
     private int valorPassado;
     private EnviaDados enviarDados = EnviaDados.getEnviaDados();
     private int delayValor = 1000;
-
+    private ImageButton button_less, button_more;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,14 +50,19 @@ public class TelaDeProgramacao extends AppCompatActivity {
         listaComandos = (ListView) findViewById(R.id.telaDeProgramacao_lista_de_comandos);
         delay = (EditText) findViewById(R.id.telaDeProgramacao_delay);
         valor = (EditText) findViewById(R.id.telaDeProgramacao_ValorEnviado);
+        button_less = (ImageButton) findViewById(R.id.telaDeProgramacao_button_less);
+        button_more = (ImageButton) findViewById(R.id.telaDeProgramacao_button_more);
         adapter = new ArrayAdapter<String>(TelaDeProgramacao.this, android.R.layout.simple_list_item_1, comandosTela);
         listaComandos.setAdapter(adapter);
+        delay.setText(""+delay);
         abreFecha.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 if (valor.getText().length() > 0){
                     valorPassado = Integer.parseInt(valor.getText().toString());
+                    if (valorPassado < 0) valorPassado = 0;
+                    if (valorPassado > 100) valorPassado = 100;
                     String comandoTela = "abre/fecha   " + valorPassado;
                     comandosTela.add(comandoTela);
                     valorPassado = (int) (valorPassado * 0.57)+10;
@@ -81,6 +87,8 @@ public class TelaDeProgramacao extends AppCompatActivity {
             public void onClick(View v) {
                 if (valor.getText().length() != 0){
                     valorPassado = Integer.parseInt(valor.getText().toString());
+                    if (valorPassado < 0) valorPassado = 0;
+                    if (valorPassado > 100) valorPassado = 100;
                     String comandoTela = "girar   " + valorPassado;
                     comandosTela.add(comandoTela);
                     valorPassado = (int) (valorPassado * 1.8)+10;
@@ -99,6 +107,8 @@ public class TelaDeProgramacao extends AppCompatActivity {
             public void onClick(View v) {
                 if (valor.getText().length() != 0){
                     valorPassado = Integer.parseInt(valor.getText().toString());
+                    if (valorPassado < 0) valorPassado = 0;
+                    if (valorPassado > 100) valorPassado = 100;
                     String comandoTela = "avanca/recua   " + valorPassado;
                     comandosTela.add(comandoTela);
                     valorPassado = (int) (valorPassado * 1.2)+60;
@@ -117,6 +127,8 @@ public class TelaDeProgramacao extends AppCompatActivity {
             public void onClick(View v) {
                 if (valor.getText().length() != 0){
                     valorPassado = Integer.parseInt(valor.getText().toString());
+                    if (valorPassado < 0) valorPassado = 0;
+                    if (valorPassado > 100) valorPassado = 100;
                     String comandoTela = "sobe/desce   " + valorPassado;
                     comandosTela.add(comandoTela);
                     valorPassado = (int) (valorPassado * 0.7)+60;
@@ -152,6 +164,36 @@ public class TelaDeProgramacao extends AppCompatActivity {
                 devolve.putExtra("delay", delayValor);
                 setResult(RESULT_OK, devolve);
                 finish();
+            }
+        });
+
+        button_less.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                if (valor.getText().length() < 0){
+                    valor.setText("0");
+                }
+                int valor_atual = Integer.parseInt(valor.getText().toString());
+                valor_atual--;
+                if (valor_atual < 0) valor_atual = 0;
+                valor.setText(""+valor_atual);
+
+            }
+        });
+
+        button_more.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                if (valor.getText().length() < 0){
+                    valor.setText("0");
+                }
+                int valor_atual = Integer.parseInt(valor.getText().toString());
+                valor_atual++;
+                if (valor_atual > 100) valor_atual = 100;
+                valor.setText(""+valor_atual);
+
             }
         });
 
