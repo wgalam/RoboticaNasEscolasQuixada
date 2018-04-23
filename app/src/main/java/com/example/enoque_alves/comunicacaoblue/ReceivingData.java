@@ -27,7 +27,7 @@ import java.util.List;
 public class ReceivingData extends AppCompatActivity {
 
     private BluetoothSocket mmSocket;
-    private OutputStream mmOutputStream;
+    private OutputStream mmOutputStream;//a
     private InputStream mmInputStream;
     private Thread workerThread;
     private byte[] readBuffer;
